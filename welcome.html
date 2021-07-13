@@ -1,0 +1,95 @@
+<head>
+  <!-- Here is the css code you'll need to put in between the <head><head> html tags: -->
+<!-- Style this nonsense - @MercenaryCarter -->
+<style type="text/css">
+body {
+  margin: 0px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+.introduction {
+  font-family: 'Raleway';
+  color: #fff;
+  text-align: center;
+}
+.introduction h1 {
+  font-size: 3.5em;
+}
+.introduction h2 {
+  font-size: 2.8em;
+}
+.introduction .shade {
+  background-color: rgba(0,0,0,0.5);
+}
+.introduction .shade .container .row {
+  position: relative;
+//position: absolute; //you might need to make this absolute to play nicely
+  height: 100%;
+}
+.introduction .shade .container .row .header {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.introduction .shade .container .row button {
+  font-size: 0.9em;
+  padding: 8px 25px;
+  background-color: #33c3f0;
+  border-color: #33c3f0;
+}
+</style>
+<!-- End of style this nonsense - @MercenaryCarter -->
+</head>
+<body>
+  <!-- Here is the HTML code you'll need to put after the first <body> tag: -->
+<!-- This shit is require mated - @MercenaryCarter -->
+<div class="introduction">
+  <div class="shade">
+  <div class="container">
+  <div class="row">
+  <div class="col-xs-12 text-center header">
+  <h1><b>Welcome to Money Over Ethics</b></h1>
+  <h2><i>(Slogan here)</i></h2><br/>
+  <a href="http://www.moneyoverethics.com/"><img src="http://www.moneyoverethics.com/images/Newsletter-big.jpg"></a><br/><br/>
+  <button href="http://www.moneyoverethics.com/" class="button btn btn-info btn-lg">LEARN MORE</button>
+  <button href="#closeMofo" class="btn btn-default closeMofo">NO THANKS</button>
+  </div>
+  </div>
+  </div>
+  </div>
+</div>
+<!-- End of require mated - @MercenaryCarter -->
+  
+  <!-- And here is the end javascript using jQuery you'll need to put at the end of your page before the last </body> tag: -->
+<!-- Stuff that makes the javascript run - @MercenaryCarter -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script type="text/javascript">
+// Utilises https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js
+// Change this to include desired pictures
+var pictureArray = ["http://dl.dropbox.com/u/515046/www/outside.jpg",
+  "http://dl.dropbox.com/u/515046/www/garfield-interior.jpg",
+  "http://dl.dropbox.com/u/515046/www/cheers.jpg"
+];
+$(document).ready(function() {
+  resizeEvent();
+  $(".introduction").backstretch(pictureArray, {
+  duration: 3000,
+  fade: 750
+  });
+  $(window).bind("resize", function() {
+  resizeEvent();
+  });
+});
+function resizeEvent() {
+  $(".introduction .shade .container .row").css("height", $(window).height());
+  $(".introduction .shade").css("height", $(window).height());
+}
+$('.closeMofo').on('click', function(e){
+  $(".introduction").slideUp(500);
+  e.preventDefault();
+  });
+</script>
+<!-- Stuff that makes the javascript run - @MercenaryCarter -->
+</body>
